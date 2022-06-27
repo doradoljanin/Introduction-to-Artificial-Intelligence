@@ -1,0 +1,912 @@
+0036516340
+================
+
+=== UNARCHIVE AND STRUCTURE ===
+OK!
+
+=== COMPILE ===
+Skipping (python)
+
+=== EVALUATION ===
+
+=== TOTAL RESULTS ===
+25 / 25 tests passed. (100.0%)
+
+== RESOLUTION ==
+  Passed 20 / 20 tests.
+
+- Passed test: resolution resolution_heldout_small.txt
+-> Complete obtained output:
+1. a
+2. ~a
+===============
+3. NIL (1, 2)
+===============
+[CONCLUSION]: a is true
+
+- Passed test: resolution resolution_heldout_small_2.txt
+-> Complete obtained output:
+1. a
+2. ~b
+3. ~c
+===============
+[CONCLUSION]: b v c is unknown
+
+- Passed test: resolution resolution_heldout_tautology.txt
+-> Complete obtained output:
+1. b v ~a
+2. a
+3. ~c
+===============
+[CONCLUSION]: c is unknown
+
+- Passed test: resolution resolution_heldout_tautology_2.txt
+-> Complete obtained output:
+1. ~a v c v ~d
+2. d
+3. a
+4. ~c
+===============
+5. ~a v ~d (4, 1)
+6. ~a (5, 2)
+7. NIL (3, 6)
+===============
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_heldout_tautology_3.txt
+-> Complete obtained output:
+1. d
+2. ~a
+===============
+[CONCLUSION]: a is unknown
+
+- Passed test: resolution resolution_heldout_tautology_4.txt
+-> Complete obtained output:
+1. d
+2. ~b
+3. ~a
+===============
+[CONCLUSION]: b v a is unknown
+
+- Passed test: resolution resolution_heldout_large_chain.txt
+-> Complete obtained output:
+1. a
+2. ~a v b
+3. ~b v c
+4. ~c v d
+5. e v ~d
+6. f v ~e
+7. g v ~f
+8. ~g
+===============
+9. ~f (8, 7)
+10. ~e (9, 6)
+11. ~d (10, 5)
+12. ~c (11, 4)
+13. ~b (12, 3)
+14. ~a (13, 2)
+15. NIL (1, 14)
+===============
+[CONCLUSION]: g is true
+
+- Passed test: resolution resolution_heldout_goal_isnegated.txt
+-> Complete obtained output:
+1. b v ~a
+2. ~c v ~b
+3. a
+4. c
+===============
+5. ~b (4, 2)
+6. ~a (5, 1)
+7. NIL (3, 6)
+===============
+[CONCLUSION]: ~c is true
+
+- Passed test: resolution resolution_small_example.txt
+-> Complete obtained output:
+1. ~a v b
+2. ~b v c
+3. a
+4. ~c
+===============
+5. ~b (4, 2)
+6. ~a (5, 1)
+7. NIL (3, 6)
+===============
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_ai.txt
+-> Complete obtained output:
+1. ~lab1 v prolaz_labosi
+2. ~prolaz_labosi v ~ispitni_rok1 v prolaz_kontinuirano v prolaz_rok
+3. ~prolaz_kontinuirano v prolaz_predmeta
+4. ~prolaz_rok v prolaz_predmeta
+5. lab1
+6. ispitni_rok1
+7. ~prolaz_predmeta
+===============
+8. ~prolaz_kontinuirano (7, 3)
+9. ~prolaz_rok (7, 4)
+10. ~prolaz_labosi v ~ispitni_rok1 v prolaz_kontinuirano (9, 2)
+11. ~ispitni_rok1 v prolaz_kontinuirano v ~lab1 (10, 1)
+12. ~ispitni_rok1 v prolaz_kontinuirano (11, 5)
+13. prolaz_kontinuirano (12, 6)
+14. NIL (13, 8)
+===============
+[CONCLUSION]: prolaz_predmeta is true
+
+- Passed test: resolution resolution_chicken_alfredo_nomilk.txt
+-> Complete obtained output:
+1. pasta
+2. olive_oil
+3. chicken
+4. butter
+5. flour
+6. cream
+7. parmesan
+8. ~milk v alfredo_sauce v ~butter v ~cream v ~flour v ~parmesan
+9. ~chicken v chicken_alfredo v ~pasta v ~olive_oil v ~alfredo_sauce
+10. ~chicken_alfredo
+===============
+[CONCLUSION]: chicken_alfredo is unknown
+
+- Passed test: resolution resolution_chicken_alfredo.txt
+-> Complete obtained output:
+1. pasta
+2. olive_oil
+3. chicken
+4. butter
+5. flour
+6. milk
+7. cream
+8. parmesan
+9. ~flour v ~butter v alfredo_sauce v ~milk v ~cream v ~parmesan
+10. ~pasta v chicken_alfredo v ~chicken v ~olive_oil v ~alfredo_sauce
+11. ~chicken_alfredo
+===============
+12. ~pasta v ~olive_oil v ~chicken v ~alfredo_sauce (11, 10)
+13. ~olive_oil v ~chicken v ~alfredo_sauce (12, 1)
+14. ~chicken v ~alfredo_sauce (13, 2)
+15. ~alfredo_sauce (14, 3)
+16. ~flour v ~butter v ~milk v ~cream v ~parmesan (15, 9)
+17. ~milk v ~flour v ~cream v ~parmesan (16, 4)
+18. ~milk v ~cream v ~parmesan (17, 5)
+19. ~cream v ~parmesan (18, 6)
+20. ~parmesan (19, 7)
+21. NIL (8, 20)
+===============
+[CONCLUSION]: chicken_alfredo is true
+
+- Passed test: resolution resolution_chicken_broccoli_alfredo_big.txt
+-> Complete obtained output:
+1. pasta
+2. broccoli
+3. olive_oil
+4. chicken
+5. butter
+6. flour
+7. milk
+8. cream
+9. parmesan
+10. ~olive_oil v ~chicken v diced_chicken
+11. ~flour v ~parmesan v ~cream v ~milk v ~butter v alfredo_sauce
+12. chicken_broccoli_alfredo v ~broccoli v ~alfredo_sauce v ~pasta v ~diced_chicken
+13. ~chicken_broccoli_alfredo
+===============
+14. ~pasta v ~alfredo_sauce v ~diced_chicken v ~broccoli (13, 12)
+15. ~broccoli v ~diced_chicken v ~alfredo_sauce (14, 1)
+16. ~alfredo_sauce v ~diced_chicken (15, 2)
+17. ~olive_oil v ~chicken v ~alfredo_sauce (16, 10)
+18. ~chicken v ~alfredo_sauce (17, 3)
+19. ~alfredo_sauce (18, 4)
+20. ~flour v ~parmesan v ~cream v ~milk v ~butter (19, 11)
+21. ~cream v ~flour v ~milk v ~parmesan (20, 5)
+22. ~cream v ~milk v ~parmesan (21, 6)
+23. ~cream v ~parmesan (22, 7)
+24. ~parmesan (23, 8)
+25. NIL (9, 24)
+===============
+[CONCLUSION]: chicken_broccoli_alfredo is true
+
+- Passed test: resolution resolution_coffee.txt
+-> Complete obtained output:
+1. water
+2. heater
+3. coffee_powder
+4. ~heater v ~water v hot_water
+5. ~hot_water v ~coffee_powder v coffee
+6. ~coffee
+===============
+7. ~hot_water v ~coffee_powder (6, 5)
+8. ~hot_water (7, 3)
+9. ~heater v ~water (8, 4)
+10. ~heater (9, 1)
+11. NIL (2, 10)
+===============
+[CONCLUSION]: coffee is true
+
+- Passed test: resolution resolution_coffee_noheater.txt
+-> Complete obtained output:
+1. water
+2. coffee_powder
+3. ~water v hot_water v ~heater
+4. coffee v ~hot_water v ~coffee_powder
+5. ~coffee
+===============
+[CONCLUSION]: coffee is unknown
+
+- Passed test: resolution resolution_coffee_or_tea.txt
+-> Complete obtained output:
+1. water
+2. heater
+3. coffee_powder
+4. hot_water v ~heater v ~water
+5. coffee v ~coffee_powder v ~hot_water
+6. ~coffee
+===============
+7. ~coffee_powder v ~hot_water (6, 5)
+8. ~hot_water (7, 3)
+9. ~heater v ~water (8, 4)
+10. ~heater (9, 1)
+11. NIL (2, 10)
+===============
+[CONCLUSION]: coffee v tea is true
+
+- Passed test: resolution resolution_coffee_or_tea_nopowder.txt
+-> Complete obtained output:
+1. water
+2. heater
+3. tea_bag
+4. hot_water v ~heater v ~water
+5. ~tea_bag v tea v ~hot_water
+6. ~tea
+===============
+7. ~tea_bag v ~hot_water (6, 5)
+8. ~hot_water (7, 3)
+9. ~heater v ~water (8, 4)
+10. ~heater (9, 1)
+11. NIL (2, 10)
+===============
+[CONCLUSION]: coffee v tea is true
+
+- Passed test: resolution resolution_small_example_2.txt
+-> Complete obtained output:
+1. a
+2. b
+3. ~b v c v ~a
+4. ~c
+===============
+5. ~b v ~a (4, 3)
+6. ~b (5, 1)
+7. NIL (2, 6)
+===============
+[CONCLUSION]: c is true
+
+- Passed test: resolution resolution_small_example_3.txt
+-> Complete obtained output:
+1. ~a v b
+2. c v ~b
+3. ~c
+===============
+[CONCLUSION]: c is unknown
+
+- Passed test: resolution resolution_small_example_4.txt
+-> Complete obtained output:
+1. b v ~a
+2. a
+3. ~b
+===============
+4. ~a (3, 1)
+5. NIL (2, 4)
+===============
+[CONCLUSION]: b v c is true
+
+== COOKING ==
+  Passed 5 / 5 tests.
+
+- Passed test: cooking cooking_heldout_large_chain.txt cooking_heldout_large_chain_input.txt
+-> Complete obtained output:
+Constructed with knowledge:
+a
+b v ~a
+~b v c
+d v ~c
+~d v e
+~e v f
+~f v g
+
+User’s command: b ?
+
+1. a
+2. b v ~a
+3. ~b
+===============
+4. ~a (3, 2)
+5. NIL (1, 4)
+===============
+[CONCLUSION]: b is true
+
+User’s command: c ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. ~c
+===============
+5. ~b (4, 3)
+6. ~a (5, 2)
+7. NIL (1, 6)
+===============
+[CONCLUSION]: c is true
+
+User’s command: d ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d
+===============
+6. ~c (5, 4)
+7. ~b (6, 3)
+8. ~a (7, 2)
+9. NIL (1, 8)
+===============
+[CONCLUSION]: d is true
+
+User’s command: e ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e
+===============
+7. ~d (6, 5)
+8. ~c (7, 4)
+9. ~b (8, 3)
+10. ~a (9, 2)
+11. NIL (1, 10)
+===============
+[CONCLUSION]: e is true
+
+User’s command: f ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e v f
+7. ~f
+===============
+8. ~e (7, 6)
+9. ~d (8, 5)
+10. ~c (9, 4)
+11. ~b (10, 3)
+12. ~a (11, 2)
+13. NIL (1, 12)
+===============
+[CONCLUSION]: f is true
+
+User’s command: g ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e v f
+7. ~f v g
+8. ~g
+===============
+9. ~f (8, 7)
+10. ~e (9, 6)
+11. ~d (10, 5)
+12. ~c (11, 4)
+13. ~b (12, 3)
+14. ~a (13, 2)
+15. NIL (1, 14)
+===============
+[CONCLUSION]: g is true
+
+User’s command: b v ~a -
+Removed b v ~a
+
+User’s command: b ?
+1. a
+2. d v ~c
+3. ~d v e
+4. ~e v f
+5. ~f v g
+6. ~b
+===============
+[CONCLUSION]: b is unknown
+
+User’s command: b v ~a +
+Added b v ~a
+
+User’s command: b ?
+
+1. a
+2. b v ~a
+3. ~b
+===============
+4. ~a (3, 2)
+5. NIL (1, 4)
+===============
+[CONCLUSION]: b is true
+
+User’s command: ~b v c -
+Removed ~b v c
+
+User’s command: c ?
+1. a
+2. ~d v e
+3. ~e v f
+4. ~f v g
+5. b v ~a
+6. ~c
+===============
+[CONCLUSION]: c is unknown
+
+User’s command: ~b v c +
+Added ~b v c
+
+User’s command: c ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. ~c
+===============
+5. ~b (4, 3)
+6. ~a (5, 2)
+7. NIL (1, 6)
+===============
+[CONCLUSION]: c is true
+
+User’s command: d v ~c -
+Removed d v ~c
+
+User’s command: d ?
+1. a
+2. ~e v f
+3. ~f v g
+4. b v ~a
+5. ~b v c
+6. ~d
+===============
+[CONCLUSION]: d is unknown
+
+User’s command: d v ~c +
+Added d v ~c
+
+User’s command: d ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d
+===============
+6. ~c (5, 4)
+7. ~b (6, 3)
+8. ~a (7, 2)
+9. NIL (1, 8)
+===============
+[CONCLUSION]: d is true
+
+User’s command: ~d v e -
+Removed ~d v e
+
+User’s command: e ?
+1. a
+2. ~f v g
+3. b v ~a
+4. ~b v c
+5. d v ~c
+6. ~e
+===============
+[CONCLUSION]: e is unknown
+
+User’s command: ~d v e +
+Added ~d v e
+
+User’s command: e ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e
+===============
+7. ~d (6, 5)
+8. ~c (7, 4)
+9. ~b (8, 3)
+10. ~a (9, 2)
+11. NIL (1, 10)
+===============
+[CONCLUSION]: e is true
+
+User’s command: ~e v f -
+Removed ~e v f
+
+User’s command: f ?
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~f
+===============
+[CONCLUSION]: f is unknown
+
+User’s command: ~e v f +
+Added ~e v f
+
+User’s command: f ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e v f
+7. ~f
+===============
+8. ~e (7, 6)
+9. ~d (8, 5)
+10. ~c (9, 4)
+11. ~b (10, 3)
+12. ~a (11, 2)
+13. NIL (1, 12)
+===============
+[CONCLUSION]: f is true
+
+User’s command: ~f v g -
+Removed ~f v g
+
+User’s command: g ?
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e v f
+7. ~g
+===============
+[CONCLUSION]: g is unknown
+
+User’s command: ~f v g +
+Added ~f v g
+
+User’s command: g ?
+
+1. a
+2. b v ~a
+3. ~b v c
+4. d v ~c
+5. ~d v e
+6. ~e v f
+7. ~f v g
+8. ~g
+===============
+9. ~f (8, 7)
+10. ~e (9, 6)
+11. ~d (10, 5)
+12. ~c (11, 4)
+13. ~b (12, 3)
+14. ~a (13, 2)
+15. NIL (1, 14)
+===============
+[CONCLUSION]: g is true
+
+- Passed test: cooking cooking_coffee.txt cooking_coffee_input.txt
+-> Complete obtained output:
+Constructed with knowledge:
+water
+heater
+coffee_powder
+hot_water v ~water v ~heater
+~hot_water v ~coffee_powder v coffee
+
+User’s command: water ?
+
+1. water
+2. ~water
+===============
+3. NIL (1, 2)
+===============
+[CONCLUSION]: water is true
+
+User’s command: hot_water ?
+
+1. water
+2. heater
+3. hot_water v ~water v ~heater
+4. ~hot_water
+===============
+5. ~water v ~heater (4, 3)
+6. ~heater (5, 1)
+7. NIL (2, 6)
+===============
+[CONCLUSION]: hot_water is true
+
+User’s command: coffee ?
+
+1. water
+2. heater
+3. coffee_powder
+4. hot_water v ~water v ~heater
+5. ~hot_water v ~coffee_powder v coffee
+6. ~coffee
+===============
+7. ~hot_water v ~coffee_powder (6, 5)
+8. ~hot_water (7, 3)
+9. ~water v ~heater (8, 4)
+10. ~heater (9, 1)
+11. NIL (2, 10)
+===============
+[CONCLUSION]: coffee is true
+
+User’s command: heater -
+Removed heater
+
+User’s command: hot_water ?
+1. water
+2. coffee_powder
+3. hot_water v ~water v ~heater
+4. ~hot_water
+===============
+[CONCLUSION]: hot_water is unknown
+
+User’s command: coffee ?
+1. water
+2. coffee_powder
+3. hot_water v ~water v ~heater
+4. ~hot_water v ~coffee_powder v coffee
+5. ~coffee
+===============
+[CONCLUSION]: coffee is unknown
+
+User’s command: heater +
+Added heater
+
+User’s command: coffee ?
+
+1. water
+2. coffee_powder
+3. hot_water v ~water v ~heater
+4. ~hot_water v ~coffee_powder v coffee
+5. heater
+6. ~coffee
+===============
+7. ~hot_water v ~coffee_powder (6, 4)
+8. ~hot_water (7, 2)
+9. ~water v ~heater (8, 3)
+10. ~heater (9, 1)
+11. NIL (5, 10)
+===============
+[CONCLUSION]: coffee is true
+
+- Passed test: cooking cooking_chicken_alfredo.txt cooking_chicken_alfredo_input.txt
+-> Complete obtained output:
+Constructed with knowledge:
+pasta
+olive_oil
+chicken
+butter
+flour
+milk
+cream
+parmesan
+~parmesan v ~flour v ~butter v alfredo_sauce v ~cream v ~milk
+~pasta v chicken_alfredo v ~alfredo_sauce v ~chicken v ~olive_oil
+
+User’s command: alfredo_sauce ?
+
+1. butter
+2. flour
+3. milk
+4. cream
+5. parmesan
+6. ~parmesan v ~flour v ~butter v alfredo_sauce v ~cream v ~milk
+7. ~alfredo_sauce
+===============
+8. ~parmesan v ~flour v ~butter v ~cream v ~milk (7, 6)
+9. ~milk v ~cream v ~parmesan v ~flour (8, 1)
+10. ~milk v ~parmesan v ~cream (9, 2)
+11. ~parmesan v ~cream (10, 3)
+12. ~parmesan (11, 4)
+13. NIL (5, 12)
+===============
+[CONCLUSION]: alfredo_sauce is true
+
+User’s command: chicken_alfredo ?
+
+1. pasta
+2. olive_oil
+3. chicken
+4. butter
+5. flour
+6. milk
+7. cream
+8. parmesan
+9. ~parmesan v ~flour v ~butter v alfredo_sauce v ~cream v ~milk
+10. ~pasta v chicken_alfredo v ~alfredo_sauce v ~chicken v ~olive_oil
+11. ~chicken_alfredo
+===============
+12. ~olive_oil v ~alfredo_sauce v ~chicken v ~pasta (11, 10)
+13. ~olive_oil v ~alfredo_sauce v ~chicken (12, 1)
+14. ~alfredo_sauce v ~chicken (13, 2)
+15. ~alfredo_sauce (14, 3)
+16. ~parmesan v ~flour v ~butter v ~cream v ~milk (15, 9)
+17. ~milk v ~cream v ~parmesan v ~flour (16, 4)
+18. ~milk v ~parmesan v ~cream (17, 5)
+19. ~parmesan v ~cream (18, 6)
+20. ~parmesan (19, 7)
+21. NIL (8, 20)
+===============
+[CONCLUSION]: chicken_alfredo is true
+
+User’s command: butter -
+Removed butter
+
+User’s command: chicken_alfredo ?
+1. pasta
+2. olive_oil
+3. chicken
+4. flour
+5. milk
+6. cream
+7. parmesan
+8. ~parmesan v ~flour v ~butter v alfredo_sauce v ~cream v ~milk
+9. ~pasta v chicken_alfredo v ~alfredo_sauce v ~chicken v ~olive_oil
+10. ~chicken_alfredo
+===============
+[CONCLUSION]: chicken_alfredo is unknown
+
+- Passed test: cooking cooking_chicken_alfredo_nomilk.txt cooking_chicken_alfredo_nomilk_input.txt
+-> Complete obtained output:
+Constructed with knowledge:
+pasta
+olive_oil
+chicken
+butter
+flour
+cream
+parmesan
+~parmesan v ~butter v alfredo_sauce v ~milk v ~cream v ~flour
+~olive_oil v chicken_alfredo v ~pasta v ~alfredo_sauce v ~chicken
+
+User’s command: alfredo_sauce ?
+1. pasta
+2. olive_oil
+3. chicken
+4. butter
+5. flour
+6. cream
+7. parmesan
+8. ~parmesan v ~butter v alfredo_sauce v ~milk v ~cream v ~flour
+9. ~alfredo_sauce
+===============
+[CONCLUSION]: alfredo_sauce is unknown
+
+User’s command: milk +
+Added milk
+
+User’s command: alfredo_sauce ?
+
+1. butter
+2. flour
+3. cream
+4. parmesan
+5. ~parmesan v ~butter v alfredo_sauce v ~milk v ~cream v ~flour
+6. milk
+7. ~alfredo_sauce
+===============
+8. ~parmesan v ~butter v ~milk v ~cream v ~flour (7, 5)
+9. ~flour v ~milk v ~parmesan v ~cream (8, 1)
+10. ~parmesan v ~milk v ~cream (9, 2)
+11. ~milk v ~parmesan (10, 3)
+12. ~milk (11, 4)
+13. NIL (6, 12)
+===============
+[CONCLUSION]: alfredo_sauce is true
+
+User’s command: butter -
+Removed butter
+
+User’s command: alfredo_sauce ?
+1. pasta
+2. olive_oil
+3. chicken
+4. flour
+5. cream
+6. parmesan
+7. ~parmesan v ~butter v alfredo_sauce v ~milk v ~cream v ~flour
+8. milk
+9. ~alfredo_sauce
+===============
+[CONCLUSION]: alfredo_sauce is unknown
+
+User’s command: butter +
+Added butter
+
+User’s command: chicken_alfredo ?
+
+1. pasta
+2. olive_oil
+3. chicken
+4. flour
+5. cream
+6. parmesan
+7. ~parmesan v ~butter v alfredo_sauce v ~milk v ~cream v ~flour
+8. ~olive_oil v chicken_alfredo v ~pasta v ~alfredo_sauce v ~chicken
+9. milk
+10. butter
+11. ~chicken_alfredo
+===============
+12. ~alfredo_sauce v ~olive_oil v ~pasta v ~chicken (11, 8)
+13. ~alfredo_sauce v ~olive_oil v ~chicken (12, 1)
+14. ~alfredo_sauce v ~chicken (13, 2)
+15. ~alfredo_sauce (14, 3)
+16. ~parmesan v ~butter v ~milk v ~cream v ~flour (15, 7)
+17. ~milk v ~parmesan v ~cream v ~butter (16, 4)
+18. ~parmesan v ~milk v ~butter (17, 5)
+19. ~milk v ~butter (18, 6)
+20. ~butter (19, 9)
+21. NIL (10, 20)
+===============
+[CONCLUSION]: chicken_alfredo is true
+
+- Passed test: cooking cooking_chicken_broccoli_alfredo_big.txt cooking_chicken_broccoli_alfredo_big_input.txt
+-> Complete obtained output:
+Constructed with knowledge:
+pasta
+broccoli
+olive_oil
+chicken
+butter
+flour
+milk
+cream
+parmesan
+parsley
+diced_chicken v ~olive_oil v ~chicken
+alfredo_sauce v ~butter v ~parmesan v ~milk v ~cream v ~flour
+~alfredo_sauce v chicken_broccoli_alfredo v ~broccoli v ~diced_chicken v ~pasta
+
+User’s command: chicken_broccoli_alfredo ?
+
+1. pasta
+2. broccoli
+3. olive_oil
+4. chicken
+5. butter
+6. flour
+7. milk
+8. cream
+9. parmesan
+10. diced_chicken v ~olive_oil v ~chicken
+11. alfredo_sauce v ~butter v ~parmesan v ~milk v ~cream v ~flour
+12. ~alfredo_sauce v chicken_broccoli_alfredo v ~broccoli v ~diced_chicken v ~pasta
+13. ~chicken_broccoli_alfredo
+===============
+14. ~pasta v ~broccoli v ~alfredo_sauce v ~diced_chicken (13, 12)
+15. ~broccoli v ~alfredo_sauce v ~diced_chicken (14, 1)
+16. ~alfredo_sauce v ~diced_chicken (15, 2)
+17. ~olive_oil v ~chicken v ~alfredo_sauce (16, 10)
+18. ~chicken v ~alfredo_sauce (17, 3)
+19. ~alfredo_sauce (18, 4)
+20. ~butter v ~parmesan v ~milk v ~cream v ~flour (19, 11)
+21. ~milk v ~cream v ~flour v ~parmesan (20, 5)
+22. ~cream v ~parmesan v ~milk (21, 6)
+23. ~cream v ~parmesan (22, 7)
+24. ~parmesan (23, 8)
+25. NIL (9, 24)
+===============
+[CONCLUSION]: chicken_broccoli_alfredo is true
